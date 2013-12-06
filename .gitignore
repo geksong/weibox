@@ -5,16 +5,10 @@
 /Source/weibox-back/.classpath
 /Source/weibox-back/.project
 /Source/weibox-back/.tomcatplugin
-/Source/weibox-back/src/main/webapp/WEB-INF/classes/**/**
-/Source/weibox-back/target/classes/**/**
 /Source/weibox-core/.settings/
 /Source/weibox-core/.classpath
 /Source/weibox-core/.project
-/Source/weibox-core/target/classes/**/**
-/Source/weibox-core/target/test-classes/**/**
 /Source/weibox-front/.settings/
 /Source/weibox-front/.classpath
 /Source/weibox-front/.project
 /Source/weibox-front/.tomcatplugin
-/Source/weibox-front/src/main/webapp/WEB-INF/classes/**/**
-/Source/weibox-front/target/classes/**/**

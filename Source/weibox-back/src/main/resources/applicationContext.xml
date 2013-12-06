@@ -12,15 +12,16 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>file:${GAME_JS_CONFIG_HOME}/server.properties</value>
-				<value>file:${GAME_JS_CONFIG_HOME}/data-source.properties</value>
+				<value>file:${WEIBOX_BACK_CONFIG_HOME}/server.properties</value>
+				<value>file:${WEIBOX_BACK_CONFIG_HOME}/data-source.properties</value>
 			</list>
 		</property>
 	</bean>
-	<!-- 渠道广告数据采集 -->
+	<!-- 渠道广告数据采集
     <bean id="capture" class="com.shunwang.game.report.capture.api.CaptureFactory" factory-method="create">
     	<constructor-arg type="java.lang.String" value="${GAME_JS_CONFIG_HOME}/server.properties" />
     </bean>
+    -->
 	<bean id="velocityEngine"
 		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
 		<property name="resourceLoaderPath">

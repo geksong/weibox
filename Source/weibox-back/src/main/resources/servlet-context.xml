@@ -10,7 +10,7 @@
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>file:${GAME_JS_CONFIG_HOME}/server.properties</value>
+                <value>file:${WEIBOX_BACK_CONFIG_HOME}/server.properties</value>
             </list>
         </property>
     </bean>
@@ -44,7 +44,6 @@
 		<property name="maxUploadSize" value="2097152" />
 	</bean>
 	<!-- 上传文件异常配置
-    -->
     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     	<property name="exceptionMappings">  
             <props>  
@@ -54,5 +53,6 @@
             </props>  
         </property>
     </bean>
+    -->
 
 </beans>
