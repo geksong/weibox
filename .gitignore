@@ -1,0 +1,10 @@
+*.class
+/Source/weibox-back/.settings/
+/Source/weibox-back/.classpath
+/Source/weibox-back/.project
+/Source/weibox-core/.settings/
+/Source/weibox-core/.classpath
+/Source/weibox-core/.project
+/Source/weibox-front/.settings/
+/Source/weibox-front/.classpath
+/Source/weibox-front/.project
