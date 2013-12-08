@@ -29,7 +29,7 @@
 		</property>
 	</bean>	
 	<context:annotation-config />
-	<context:component-scan base-package="com.shunwang.js" />
+	<context:component-scan base-package="com.walker.weibox" />
 	<bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -49,24 +49,12 @@
 				<property name="showSql" value="true" />
 			</bean>
 		</property>
-		<property name="persistenceUnitName" value="game.js" />
+		<property name="persistenceUnitName" value="walker.weibox" />
 	</bean>
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
-	<jpa:repositories base-package="com.shunwang.js.repository">
+	<jpa:repositories base-package="com.walker.weibox.repository">
 	</jpa:repositories>
-	<bean id="aesCryp" class="com.shunwang.js.common.util.AesUtil">
-		<constructor-arg value="${aesKey}"></constructor-arg>
-	</bean>
-	<bean id="ssoAesCryp" class="com.shunwang.js.common.util.AesUtil">
-		<constructor-arg value="${sso.key}"></constructor-arg>
-		<constructor-arg value="16"></constructor-arg>
-	</bean>
-	<bean id="regAesCryp" class="com.shunwang.js.common.util.AesUtil">
-		<constructor-arg value="${aesKeyReg}"></constructor-arg>	
-	</bean>
-	<bean id="executor" class="java.util.concurrent.Executors"
-	factory-method="newCachedThreadPool" destroy-method="shutdownNow"></bean>
 </beans>

@@ -15,16 +15,14 @@
         </property>
     </bean>
 
-    <context:component-scan base-package="com.shunwang.js.controller"/>
+    <context:component-scan base-package="com.walker.weibox.controller"/>
 
     <mvc:annotation-driven/>
     <mvc:interceptors>
+    	<!-- 拦截器堆栈 -->
     	<mvc:interceptor>
-    		<mvc:mapping path="/backlogin/**"/>
-    		<bean class="com.shunwang.js.common.interceptor.JsBackPermInterceptor"/>
     	</mvc:interceptor>
-    </mvc:interceptors>
-    
+	</mvc:interceptors>    
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<property name="order" value="1" />
 	</bean>
@@ -40,8 +38,9 @@
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<!-- one of the properties available; the maximum file size in bytes 2M -->
+		<!-- one of the properties available; the maximum file size in bytes 2M
 		<property name="maxUploadSize" value="2097152" />
+		-->
 	</bean>
 	<!-- 上传文件异常配置
     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
