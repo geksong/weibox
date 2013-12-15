@@ -17,12 +17,13 @@
 
     <context:component-scan base-package="com.walker.weibox.controller"/>
 
+	<!-- 拦截器堆栈
     <mvc:annotation-driven/>
     <mvc:interceptors>
-    	<!-- 拦截器堆栈 -->
     	<mvc:interceptor>
     	</mvc:interceptor>
-	</mvc:interceptors>    
+	</mvc:interceptors>
+	-->    
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<property name="order" value="1" />
 	</bean>

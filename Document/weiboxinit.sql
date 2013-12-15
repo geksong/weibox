@@ -39,7 +39,7 @@ CREATE TABLE flow_solution
         id int NOT NULL auto_increment,
         text_msg_num int,
         imgtxt_msg_num int,
-        vadio_msg_num VARCHAR(50),
+        vadio_msg_num int,
         solution_price DECIMAL(11,2),
         solution_discount int,
         PRIMARY KEY(id)
@@ -86,3 +86,5 @@ CREATE TABLE wechat_msg
         PRIMARY KEY(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ;
+-- create table wechat_msg end
+-- --------------------------------------
