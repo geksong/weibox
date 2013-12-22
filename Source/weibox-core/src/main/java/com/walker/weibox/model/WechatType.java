@@ -11,7 +11,7 @@ import com.walker.weibox.common.BaseModel;
 
 @Entity
 @Table(name="wechat_type")
-public class WechatType extends BaseModel {
+public class WechatType extends BaseModel{
 	private static final long serialVersionUID = 3649435588145082802L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

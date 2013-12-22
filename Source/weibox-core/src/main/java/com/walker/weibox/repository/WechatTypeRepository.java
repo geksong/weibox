@@ -7,5 +7,4 @@ import com.walker.weibox.model.WechatType;
 
 @Repository("wechatTypeRepository")
 public interface WechatTypeRepository extends JpaRepository<WechatType, Integer> {
-
 }
