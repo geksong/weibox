@@ -19,4 +19,9 @@ public class WechatTypeServiceImpl implements WechatTypeService {
 	public Page<WechatType> pagination(int page) {
 		return wechatTypeRepository.findAll(new PageRequest(page, Constants.BACK_PAGE_SIZE));
 	}
+
+	@Override
+	public void add(WechatType wechatType) {
+		wechatTypeRepository.save(wechatType);
+	}
 }

@@ -25,7 +25,7 @@
 				<h5>服务帐号类型管理</h5>
 			</div>
 			<div>
-				<a href="/back/wechattype/toadd.do" class="btn btn-primary">添加帐号类型</a>
+				<a href="###" class="btn btn-primary">添加帐号类型</a>
 			</div>
 			<div>
 				<table class="table table-bordered table-hover">
