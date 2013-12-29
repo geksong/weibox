@@ -9,7 +9,7 @@
 	<title>微盒子管理后台</title>
 	<%@include file="/WEB-INF/back/includ/res-incl.jsp" %>
 	<script type="text/javascript">
-		var active_menu = "weibox-wechattype";
+		var active_menu = "weibox-flowsolution";
 	</script>
 </head>
 <body>
@@ -22,21 +22,29 @@
 		<%@include file="/WEB-INF/back/includ/left-incl.jsp" %>
 		<div class="span8 radius-div">
 			<div class="page-header">
-				<h5>服务帐号类型管理</h5>
+				<h5>流量套餐管理</h5>
 			</div>
 			<div>
-				<a href="/back/wechattype/toadd.do" class="btn btn-primary">添加帐号类型</a>
+				<a href="/back/flowsolution/toadd.do" class="btn btn-primary">添加流量套餐</a>
 			</div>
 			<div>
 				<table class="table table-bordered table-hover">
 					<tr>
-						<th>名称</th>
+						<th>价格</th>
+						<th>折扣</th>
+						<th>文本信息条数</th>
+						<th>图文信息条数</th>
+						<th>语音信息条数</th>
 						<th>操作</th>
 					</tr>
 					<c:forEach var="li" items="${pageList.content}">
 					<tr>
-						<td>${li.wechatTypeName}</td>
-						<td><a href="/back/wechattype/toupdate.do?id=${li.id}"><i class="icon-pencil"></i></a>
+						<td>${li.solutionPrice}</td>
+						<td>${li.solutionDiscount}</td>
+						<td>${li.textMsgNum}</td>
+						<td>${li.imgtxtMsgNum}</td>
+						<td>${li.vadioMsgNum}</td>
+						<td><a href="/back/flowsolution/toupdate.do?id=${li.id}"><i class="icon-pencil"></i></a>
 							&nbsp;&nbsp;
 							<a href="javascript:void(0);" data="${li.id}" class="remove-btn"><i class="icon-remove"></i></a></td>
 					</tr>
@@ -55,10 +63,10 @@
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	<h3 id="myModalLabel">删除服务帐号类型</h3>
+	<h3 id="myModalLabel">删除流量套餐</h3>
 	</div>
 	<div class="modal-body">
-	<p>确定删除此服务帐号类型~?</p>
+	<p>确定删除此流量套餐~?</p>
 	<input type="hidden" id="delid"></input>
 	</div>
 	<div class="modal-footer">
@@ -72,7 +80,7 @@
 				$("#myModal").modal('show');
 			});
 			$("#remove-model-sure").click(function() {
-				var url = "/back/wechattype/del.do";
+				var url = "/back/flowsolution/del.do";
 				var data = {"id":$("#delid").val()};
 				$.ajax({
 					type:"post",
@@ -80,7 +88,7 @@
 					data:data,
 					success:function(mesg) {
 						if(mesg.code) {
-							location.href = "/back/wechattype/list.do?page=${page}";
+							location.href = "/back/flowsolution/list.do?page=${page}";
 						}
 					}
 				});
