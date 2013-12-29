@@ -22,14 +22,15 @@
 		<%@include file="/WEB-INF/back/includ/left-incl.jsp" %>
 		<div class="span8 radius-div">
 			<div class="page-header">
-				<h5>服务帐号类型管理---添加服务帐号类型</h5>
+				<h5>服务帐号类型管理---更新服务帐号类型</h5>
 			</div>
 			<div>
-				<form class="form-horizontal" action="/back/wechattype/add.do" method="post">
+				<form class="form-horizontal" action="/back/wechattype/update.do" method="post">
+					<input type="hidden" id="wechattypeid" value="${wechatType.id}"></input>
 					<div class="control-group">
 						<label class="control-label">服务帐号类型名称</label>
 						<div class="controls">
-							<input type="text" id="wechattypename" name="wechattypename" placeholder="服务帐号类型名称"></input>
+							<input type="text" id="wechattypename" name="wechattypename" value="${wechatType.wechatTypeName}" placeholder="服务帐号类型名称"></input>
 						</div>
 					</div>
 					<div class="control-group">
@@ -53,14 +54,15 @@
 	<script type="text/javascript">
 		$(function() {
 			$("#btn-sure").click(function() {
-				var url = "/back/wechattype/add.do";
+				var url = "/back/wechattype/update.do";
+				var wechattypeid = $("#wechattypeid").val();
 				var wechattypename = $("#wechattypename").val();
 				if(null == wechattypename || "" == wechattypename) {
 					$("#alerterror").html("请输入服务帐号类型名称");
 					$("#alerterror").removeClass("hide");
 					return false;
 				}
-				var data = {"wechatTypeName":wechattypename};
+				var data = {"id":wechattypeid, "wechatTypeName":wechattypename};
 				$.ajax({
 					type:"post",
 					data:data,

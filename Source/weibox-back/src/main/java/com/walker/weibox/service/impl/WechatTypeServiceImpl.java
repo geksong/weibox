@@ -17,11 +17,22 @@ public class WechatTypeServiceImpl implements WechatTypeService {
 
 	@Override
 	public Page<WechatType> pagination(int page) {
+		page -= 1;
 		return wechatTypeRepository.findAll(new PageRequest(page, Constants.BACK_PAGE_SIZE));
 	}
 
 	@Override
-	public void add(WechatType wechatType) {
+	public void addOrUpdate(WechatType wechatType) {
 		wechatTypeRepository.save(wechatType);
+	}
+
+	@Override
+	public WechatType findById(int id) {
+		return wechatTypeRepository.findOne(id);
+	}
+
+	@Override
+	public void del(int id) {
+		wechatTypeRepository.delete(id);
 	}
 }
