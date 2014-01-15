@@ -6,5 +6,6 @@
 	<class>com.walker.weibox.model.WechatInfo</class>
 	<class>com.walker.weibox.model.UserInfo</class>
 	<class>com.walker.weibox.model.FlowSolution</class>
+	<class>com.walker.weibox.model.BackUser</class>
 	</persistence-unit>
 </persistence>

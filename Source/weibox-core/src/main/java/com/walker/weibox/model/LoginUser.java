@@ -1,0 +1,21 @@
+package com.walker.weibox.model;
+/**
+ * author geksong <br/>
+ * function 登陆的用户<br/>
+ **/
+public class LoginUser {
+	private String userName;
+	private String userId;
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+}

@@ -7,6 +7,8 @@
 	<title>微盒子管理后台</title>
 </head>
 <body>
-微盒子管理后台
+<% 
+	response.sendRedirect("/back/flowsolution/list.do");
+%>
 </body>
 </html>

@@ -8,6 +8,7 @@
 					<li><a href="###">首页</a></li>
 				</ul>
 				<a type="button" class="btn btn-primary pull-right">退出</a>
+				<a type="button" class="btn pull-right">admin</a>				
 			</div>
 		</div>
 	</div>

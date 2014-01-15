@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class BaseController {
-	private static ObjectMapper mapper = new ObjectMapper();
+	protected static ObjectMapper mapper = new ObjectMapper();
 	@Value("${static.path}")
 	protected String staticPath;
 	

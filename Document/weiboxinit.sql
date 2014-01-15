@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS flow_solution;
 DROP TABLE IF EXISTS wechat_info;
 DROP TABLE IF EXISTS wechat_type;
 DROP TABLE IF EXISTS wechat_msg;
+DROP TABLE IF EXISTS back_user;
 -- drop exists tables end
 -- ---------------------
 -- --------------------
@@ -88,3 +89,25 @@ CREATE TABLE wechat_msg
 ;
 -- create table wechat_msg end
 -- --------------------------------------
+-- create table back_user
+CREATE TABLE back_user
+(
+        id int NOT NULL auto_increment,
+        user_name VARCHAR(50),
+        user_password VARCHAR(50),
+        PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+;
+-- create table back_user end
+-- init back_user
+INSERT INTO back_user
+(
+        user_name,
+        user_password
+)
+VALUES
+(
+        'admin',
+        'admin'
+)
+-- -------------------------------------
