@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -61,5 +62,20 @@ public class BackUserLoginController extends BaseBackController {
 		jsonView.addObject("msg", "登陆成功");
 		jsonView.addObject("jumpUrl", jumpUrl);
 		return jsonView;
+	}
+	
+	/**
+	 * 后台用户退出
+	 * @param req
+	 * @param rep
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("logout")
+	public String logout(HttpServletRequest req, HttpServletResponse rep, Model model) {
+		if(CookieUtil.instance().isBackLogin(req)) {
+			CookieUtil.instance().removeBackUser(req, rep);
+		}
+		return "/welcome";
 	}
 }

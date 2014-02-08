@@ -77,6 +77,38 @@ public class CookieUtil {
 	}
 	
 	/**
+	 * 删除cookie
+	 * @param cookieKey
+	 * @param req
+	 * @param rep
+	 */
+	public void removeCookie(String cookieKey, HttpServletRequest req, HttpServletResponse rep) {
+		Cookie cookie = new Cookie(cookieKey, null);
+		cookie.setDomain(getDomain(req));
+		cookie.setPath("/");
+		cookie.setMaxAge(0);
+		rep.addCookie(cookie);
+	}
+	
+	/**
+	 * 删除后台用户cookie
+	 * @param req
+	 * @param rep
+	 */
+	public void removeBackUser(HttpServletRequest req, HttpServletResponse rep) {
+		removeCookie(USER_BACK_COOKIE_KEY, req, rep);
+	}
+	
+	/**
+	 * 删除前台用户cookie
+	 * @param req
+	 * @param rep
+	 */
+	public void removeFrontUser(HttpServletRequest req, HttpServletResponse rep) {
+		removeCookie(USER_FRONT_COOKIE_KEY, req, rep);
+	}
+	
+	/**
 	 * 存入后台登陆用户
 	 * @param user
 	 * @param req

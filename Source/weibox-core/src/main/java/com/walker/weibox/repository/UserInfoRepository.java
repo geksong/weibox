@@ -7,5 +7,5 @@ import com.walker.weibox.model.UserInfo;
 
 @Repository("userInfoRepository")
 public interface UserInfoRepository extends JpaRepository<UserInfo, Integer> {
-
+	public UserInfo findByUserName(String userName);
 }

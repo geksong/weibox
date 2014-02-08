@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="walker.weibox">
+	<class>com.walker.weibox.model.WechatType</class>
+	<class>com.walker.weibox.model.WechatMsg</class>
+	<class>com.walker.weibox.model.WechatInfo</class>
+	<class>com.walker.weibox.model.UserInfo</class>
+	<class>com.walker.weibox.model.FlowSolution</class>
+	<class>com.walker.weibox.model.BackUser</class>
+	</persistence-unit>
+</persistence>
